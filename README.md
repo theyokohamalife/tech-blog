@@ -1,20 +1,7 @@
-# tech-blog
+# LaShawn's Tech Blog
 
-## Build Setup
+This is a tech blog that I created using **Nuxt.js** and deployed to **Google Firebase**.  
 
-```bash
-# install dependencies
-$ yarn install
+https://tech-blog-aecb3.web.app 
 
-# serve with hot reload at localhost:3000
-$ yarn dev
 
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

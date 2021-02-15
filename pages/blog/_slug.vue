@@ -1,6 +1,6 @@
 <template>
   <article>
-      <p>Post last updated: {{ formatDate(article.createdAt) }} </p>
+      <p>Post last updated: {{ formatDate(article.updatedAt) }} </p>
     <nuxt-content :document="article" />
   </article>
 </template>

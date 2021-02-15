@@ -6,4 +6,11 @@ alt: my first blog post
 
 # My first blog post
 
-Welcome to my first blog post using content module
+Welcome to my first blog post using content module 
+
+```javascript
+function foo(bar) {
+  let a = 42, b = 'Prism';
+  return a + bar(b);
+}
+```

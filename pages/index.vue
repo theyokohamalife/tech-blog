@@ -16,7 +16,9 @@
   </div>
 </template>
 
+
 <script>
+
   export default {
     async asyncData({ $content, params }) {
       const articles = await $content('articles', params.slug)

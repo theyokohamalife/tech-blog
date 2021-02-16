@@ -1,34 +1,39 @@
 <template>
   <div>
     <h1>Blog Posts</h1>
-    <ul>
-      <li v-for="article of articles" :key="article.slug">
-        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          <img :src="article.img" />
-          <div>
-            <h2>{{ article.title }}</h2>
-            <!-- <p>by {{ article.author.name }}</p> -->
-            <!-- <p>{{ article.description }}</p> -->
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
+    <v-container>
+      <v-row dense>
+        <v-col cols="12" v-for="article of articles" :key="article.slug">
+          <v-card elevation="2">
+            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+              <!-- <img :src="article.img" /> -->
+              <v-card-title>{{ article.title }}</v-card-title>
+              <v-card-subtitle>
+                <p>by {{ article.author.name }}</p>
+              </v-card-subtitle>
+              <v-card-text>
+                <p>{{ article.description }}</p>
+              </v-card-text>
+            </NuxtLink>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 
 <script>
+export default {
+  async asyncData({ $content, params }) {
+    const articles = await $content("articles", params.slug)
+      .only(["title", "description", "img", "slug", "author"])
+      .sortBy("createdAt", "asc")
+      .fetch();
 
-  export default {
-    async asyncData({ $content, params }) {
-      const articles = await $content('articles', params.slug)
-        .only(['title', 'description', 'img', 'slug', 'author'])
-        .sortBy('createdAt', 'asc')
-        .fetch()
-
-      return {
-        articles
-      }
-    }
-  }
+    return {
+      articles,
+    };
+  },
+};
 </script>

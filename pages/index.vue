@@ -4,10 +4,10 @@
     <v-container>
       <v-row dense>
         <v-col cols="12" v-for="article of articles" :key="article.slug">
-          <v-card elevation="2">
-            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+          <v-card elevation="2" dark>
+            <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }" class="text-decoration-none">
               <!-- <img :src="article.img" /> -->
-              <v-card-title>{{ article.title }}</v-card-title>
+              <v-card-title class="headline font-weight-bold">{{ article.title }}</v-card-title>
               <v-card-subtitle>
                 <p>by {{ article.author.name }}</p>
               </v-card-subtitle>

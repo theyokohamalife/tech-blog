@@ -1,11 +1,11 @@
 <template>
   <v-app dark>
-    <v-app-bar :clipped-right="clipped" fixed app>
+    <v-app-bar :clipped-right="clipped" fixed app color="blue darken-1">
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" :clipped="clipped" right app>
+    <v-navigation-drawer v-model="drawer" :clipped="clipped" right app color="blue darken-1">
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
